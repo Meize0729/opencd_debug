@@ -120,3 +120,5 @@ opencd/.mim
 # *.pth
 
 ./wandb
+./pretrain
+./push.sh
