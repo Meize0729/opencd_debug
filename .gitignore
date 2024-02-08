@@ -117,8 +117,8 @@ work_dirs/
 opencd/.mim
 
 # Pytorch
-# *.pth
+*.pth
 
-.wandb/
-.pretrain
-.push.sh
+wandb/
+pretrain
+push.sh
