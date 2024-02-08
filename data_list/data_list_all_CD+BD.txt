@@ -1,0 +1,8 @@
+# BANDON train和test 0-1 -> 0-255
+/mnt/public/usr/wangmingze/Datasets/CD/BANDON/train.txt
+# /mnt/public/usr/wangmingze/Datasets/CD/BANDON/val.txt
+# /mnt/public/usr/wangmingze/Datasets/CD/BANDON/test.txt
+
+#/mnt/public/usr/wangmingze/Datasets/CD/xView2_train/train.txt
+#/mnt/public/usr/wangmingze/Datasets/CD/xView2_tier3/train.txt
+#/mnt/public/usr/wangmingze/Datasets/CD/xView2_hold/train.txt

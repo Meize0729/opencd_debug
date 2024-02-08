@@ -1,0 +1,28 @@
+# levir-CD 0-255 445*10=4450
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+
+
+# S2Looking 0-255 3500*1 = 3500
+/mnt/public/usr/wangmingze/Datasets/CD/S2Looking/train_1024.txt
+
+
+
+# WHU-main 0-255 4736
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-main/train_tif.txt
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-main/train_tif.txt
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-main/val_tif.txt
+# /mnt/public/usr/wangmingze/Datasets/CD/WHU-main/test.txt
+
+
+# inria 0-255 9737
+/mnt/public/usr/wangmingze/Datasets/CD/AerialImageDataset/train.txt
+# /mnt/public/usr/wangmingze/Datasets/CD/AerialImageDataset/val.txt

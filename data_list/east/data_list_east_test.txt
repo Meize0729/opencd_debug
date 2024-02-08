@@ -1,0 +1,1 @@
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-EAST_ASIA/test.txt

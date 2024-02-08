@@ -1,0 +1,2 @@
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/test_nooverlap.txt
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-main_v2/test_tif.txt

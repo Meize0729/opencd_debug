@@ -1,0 +1,3 @@
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-main/train_tif.txt
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-main/val_tif.txt
+#/mnt/public/usr/wangmingze/Datasets/CD/WHU-main/val.txt

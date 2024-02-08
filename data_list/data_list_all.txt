@@ -1,0 +1,120 @@
+# levir-CD 0-255 445*10=4450
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+
+
+# /mnt/public/usr/wangmingze/Datasets/CD/levir-CD/val_1024.txt
+# /mnt/public/usr/wangmingze/Datasets/CD/levir-CD/test_nooverlap.txt
+
+# levir-CD+ 0-255 637*7 = 4500
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
+#/mnt/public/usr/wangmingze/Datasets/CD/LEVIR-CD+/train_1024.txt
+#/mnt/public/usr/wangmingze/Datasets/CD/LEVIR-CD+/train_1024.txt
+
+
+# /mnt/public/usr/wangmingze/Datasets/CD/LEVIR-CD+/test_nooverlap.txt
+
+# S2Looking 0-255 3500*1 = 3500
+/mnt/public/usr/wangmingze/Datasets/CD/S2Looking/train_1024.txt
+/mnt/public/usr/wangmingze/Datasets/CD/S2Looking/val_1024.txt
+
+# /mnt/public/usr/wangmingze/Datasets/CD/S2Looking/test_nooverlap.txt
+
+
+# WHU-512 0-255 1189+638
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-512/train.txt
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-512/train.txt
+
+
+# DSIFN 0-1 -> 0-255
+#/mnt/public/usr/wangmingze/Datasets/CD/DSIFN/train.txt
+#/mnt/public/usr/wangmingze/Datasets/CD/DSIFN/val.txt
+#/mnt/public/usr/wangmingze/Datasets/CD/DSIFN/test.txt
+
+# EGY-BCD 0-255  6091
+/mnt/public/usr/wangmingze/Datasets/CD/EGY_BCD/EGY_BCD.txt
+
+# MSBC 0-1 -> 255  3226+529
+/mnt/public/usr/wangmingze/Datasets/CD/MSBC/train.txt
+/mnt/public/usr/wangmingze/Datasets/CD/MSBC/test.txt
+
+# MSOSCD 0-1 -> 255  3805+408+894
+/mnt/public/usr/wangmingze/Datasets/CD/MSOSCD/train.txt
+/mnt/public/usr/wangmingze/Datasets/CD/MSOSCD/val.txt
+/mnt/public/usr/wangmingze/Datasets/CD/MSOSCD/test.txt
+
+# SECOND 2968
+/mnt/public/usr/wangmingze/Datasets/CD/SECOND/train_1_8.txt
+/mnt/public/usr/wangmingze/Datasets/CD/SECOND/train_1_8.txt
+
+
+
+# WHU-main 0-255 4736
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-main/train_tif.txt
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-main/train_tif.txt
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-main/val_tif.txt
+# /mnt/public/usr/wangmingze/Datasets/CD/WHU-main/test.txt
+
+# WHU-EAST_ASIA 0-255 3135
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-EAST_ASIA/train_1_8.txt
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-EAST_ASIA/train_1_8.txt
+
+# WHU-small 0-255 204*4 = 816
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-small/WHU-small.txt
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-small/WHU-small.txt
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-small/WHU-small.txt
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-small/WHU-small.txt
+
+# mass_build 0-255 141*20
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+/mnt/public/usr/wangmingze/Datasets/CD/mass_build/trainval.txt
+
+# openai challenge
+/mnt/public/usr/wangmingze/Datasets/CD/openai_challenge/tmp1_removed.txt
+
+# inria 0-255 9737
+/mnt/public/usr/wangmingze/Datasets/CD/AerialImageDataset/train.txt
+# /mnt/public/usr/wangmingze/Datasets/CD/AerialImageDataset/val.txt
+
+
+# inria 0-1 1689*10
+/mnt/public/usr/wangmingze/Datasets/CD/BANDON/train.txt
+/mnt/public/usr/wangmingze/Datasets/CD/BANDON/train.txt
+/mnt/public/usr/wangmingze/Datasets/CD/BANDON/train.txt
+/mnt/public/usr/wangmingze/Datasets/CD/BANDON/train.txt
+/mnt/public/usr/wangmingze/Datasets/CD/BANDON/train.txt
+
+/mnt/public/usr/wangmingze/Datasets/CD/xView2_train/train.txt
+/mnt/public/usr/wangmingze/Datasets/CD/xView2_tier3/train.txt
+/mnt/public/usr/wangmingze/Datasets/CD/xView2_hold/train.txt

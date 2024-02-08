@@ -1,0 +1,1 @@
+/mnt/public/usr/wangmingze/Datasets/CD/AerialImageDataset/val.txt

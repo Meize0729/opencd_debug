@@ -1,0 +1,20 @@
+# WHU-main 0-255
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-main/train.txt
+# /mnt/public/usr/wangmingze/Datasets/CD/WHU-main/val.txt
+# /mnt/public/usr/wangmingze/Datasets/CD/WHU-main/test.txt
+
+# WHU-EAST_ASIA 0-255
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-EAST_ASIA/train.txt
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-EAST_ASIA/test.txt
+
+# WHU-small 0-255
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-small/WHU-small.txt
+
+# mass_build 0-255
+#/mnt/public/usr/wangmingze/Datasets/CD/mass_build/train.txt
+#/mnt/public/usr/wangmingze/Datasets/CD/mass_build/val.txt
+#/mnt/public/usr/wangmingze/Datasets/CD/mass_build/test.txt
+
+# inria 0-255
+/mnt/public/usr/wangmingze/Datasets/CD/AerialImageDataset/train.txt
+# /mnt/public/usr/wangmingze/Datasets/CD/AerialImageDataset/val.txt

@@ -1,0 +1,63 @@
+# levir-CD 0-255
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train.txt
+/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/val.txt
+# /mnt/public/usr/wangmingze/Datasets/CD/levir-CD/test.txt
+
+# levir-CD+ 0-255
+/mnt/public/usr/wangmingze/Datasets/CD/LEVIR-CD+/train.txt
+/mnt/public/usr/wangmingze/Datasets/CD/LEVIR-CD+/test.txt
+
+# S2Looking 0-255
+/mnt/public/usr/wangmingze/Datasets/CD/S2Looking/train_keep0.txt
+/mnt/public/usr/wangmingze/Datasets/CD/S2Looking/val_keep0.txt
+# /mnt/public/usr/wangmingze/Datasets/CD/S2Looking/test.txt
+
+# WHU-512 0-255
+/mnt/public/usr/wangmingze/Datasets/CD/WHU-512/train.txt
+# /mnt/public/usr/wangmingze/Datasets/CD/WHU-512/test.txt
+
+# DSIFN 0-1 -> 0-255
+/mnt/public/usr/wangmingze/Datasets/CD/DSIFN/train.txt
+/mnt/public/usr/wangmingze/Datasets/CD/DSIFN/val.txt
+/mnt/public/usr/wangmingze/Datasets/CD/DSIFN/test.txt
+
+# EGY-BCD 0-255
+/mnt/public/usr/wangmingze/Datasets/CD/EGY_BCD/EGY_BCD.txt
+
+# MSBC 0-1 -> 255
+/mnt/public/usr/wangmingze/Datasets/CD/MSBC/train.txt
+/mnt/public/usr/wangmingze/Datasets/CD/MSBC/test.txt
+
+# MSOSCD 0-1 -> 255
+/mnt/public/usr/wangmingze/Datasets/CD/MSOSCD/train.txt
+/mnt/public/usr/wangmingze/Datasets/CD/MSOSCD/val.txt
+/mnt/public/usr/wangmingze/Datasets/CD/MSOSCD/test.txt
+
+# SECOND
+/mnt/public/usr/wangmingze/Datasets/CD/SECOND/train.txt
+
+# building extraction
+#9263070414
+#3936928562
+#The ratio of 0 to 255 is: 2.352867284260364
+#0.6491261, 0.8508739
+
+# cd
+#36891523331
+#2339112701
+#The ratio of 0 to 255 is: 15.771588652068116
+#0.5298123, 0.9701877
+
+
+# bandon building
+#108457307958
+#37282697418
+#The ratio of 0 to 255 is: 2.9090520662176407
+#0.6279082, 0.8720918
+
+# bandon cd
+#70798652817
+#2071349871
+#The ratio of 0 to 255 is: 34.17995859039499
+#0.5142126, 0.9857874
+

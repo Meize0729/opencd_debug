@@ -1,0 +1,1 @@
+/mnt/public/usr/wangmingze/Datasets/CD/LEVIR-CD+/train_1024.txt
