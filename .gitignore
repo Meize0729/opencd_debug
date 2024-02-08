@@ -119,6 +119,6 @@ opencd/.mim
 # Pytorch
 # *.pth
 
-./wandb
-./pretrain
-./push.sh
+.wandb
+.pretrain/
+.push.sh
