@@ -6,8 +6,8 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input-img-A-dir", default="data_dir/Levir-CD/train/A")
     parser.add_argument("--input-img-B-dir", default="data_dir/Levir-CD/train/B")
-    parser.add_argument("--input-mask-dir", default="data_dir/Levir-CD/train/label")
-    parser.add_argument("--output-txt-dir", default="data_dir/Levir-CD/train.txt")
+    parser.add_argument("--input-mask-dir",  default="data_dir/Levir-CD/train/label")
+    parser.add_argument("--output-txt-dir",  default="data_dir/Levir-CD/train.txt")
     return parser.parse_args()
 
 def process_file(filename):
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     b_filenames = os.listdir(img_B_folder)
     label_filenames = os.listdir(label_folder)
 
-    with Pool(32) as p:
+    with Pool(16) as p:
         results = p.map(process_file, a_filenames)
     # Filter out None and write data_strs to txt file
     with open(txt_dir, 'w') as f:

@@ -8,10 +8,10 @@ from tqdm import tqdm
 
 
 def slide_crop(args):
-    filenameee, out_path = args
-    real_path = filenameee
+    filename, out_path = args
+    real_path = filename
 
-    name = filenameee.split('/')[-1].split('.')[0]
+    name = filename.split('/')[-1].split('.')[0]
     try:
         img = cv2.imread(real_path)
         img[img != 0] = 255
@@ -54,9 +54,9 @@ if __name__ == '__main__':
                 filenames = [os.path.join(path3, filename) for filename in os.listdir(path3) if
                             filename.endswith('.png') or filename.endswith('.jpg') or filename.endswith('.tif')]
                 
-                with Pool() as p:
-                    args = zip(filenames, [out_path] * len(filenames))
-                    list(tqdm(p.imap(slide_crop, args), total=len(filenames)))
+                with Pool(64) as p:
+                    _args = zip(filenames, [out_path] * len(filenames))
+                    list(tqdm(p.imap(slide_crop, _args), total=len(filenames)))
 
 
     

@@ -5,12 +5,12 @@ import re
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Distribute images and masks into train and val sets based on city ID.")
-    parser.add_argument("--input-img-dir", default='data_dir/AerialImageDataset/train/images', help="Directory containing input images.")
-    parser.add_argument("--input-mask-dir", default='data_dir/AerialImageDataset/train/gt', help="Directory containing input masks.")
-    parser.add_argument("--output-train-img-dir", default='data_dir/AerialImageDataset/train_images', help="Output directory for train images.")
+    parser.add_argument("--input-img-dir",         default='data_dir/AerialImageDataset/train/images', help="Directory containing input images.")
+    parser.add_argument("--input-mask-dir",        default='data_dir/AerialImageDataset/train/gt', help="Directory containing input masks.")
+    parser.add_argument("--output-train-img-dir",  default='data_dir/AerialImageDataset/train_images', help="Output directory for train images.")
     parser.add_argument("--output-train-mask-dir", default='data_dir/AerialImageDataset/train_masks', help="Output directory for train masks.")
-    parser.add_argument("--output-val-img-dir", default='data_dir/AerialImageDataset/val_images', help="Output directory for val images.")
-    parser.add_argument("--output-val-mask-dir", default='data_dir/AerialImageDataset/val_masks', help="Output directory for val masks.")
+    parser.add_argument("--output-val-img-dir",    default='data_dir/AerialImageDataset/val_images', help="Output directory for val images.")
+    parser.add_argument("--output-val-mask-dir",   default='data_dir/AerialImageDataset/val_masks', help="Output directory for val masks.")
     return parser.parse_args()
 
 def distribute_files(args):

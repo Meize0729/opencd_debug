@@ -1,9 +1,9 @@
 bx = []
 cd_list = []
 
-with open('/mnt/public/usr/wangmingze/Datasets/CD/BANDON/test_bx.txt', 'w') as fbx:
-    with open('/mnt/public/usr/wangmingze/Datasets/CD/BANDON/test_cd.txt', 'w') as fcd:
-        with open('/mnt/public/usr/wangmingze/Datasets/CD/BANDON/test_nooverlap.txt', 'r') as fr:
+with open('/mnt/public/usr/wangmingze/Datasets/CD/BANDON/test_bx_tmp.txt', 'w') as fbx:
+    with open('/mnt/public/usr/wangmingze/Datasets/CD/BANDON/test_cd_tmp.txt', 'w') as fcd:
+        with open('/mnt/public/usr/wangmingze/Datasets/CD/BANDON/test_tmp.txt', 'r') as fr:
             for line in fr.readlines():
                 a, b, cd, label_a, label_b = line.strip().split('\t')
                 if cd not in cd_list:

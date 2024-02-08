@@ -32,10 +32,11 @@ num_classes = 2
 # split huge RS image to small patches
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input-img-dir", default="data_dir/AerialImageDataset/train_images")
-    parser.add_argument("--input-mask-dir", default="data_dir/AerialImageDataset/train_masks")
-    parser.add_argument("--output-img-dir", default="data_dir/AerialImageDataset/train_processed/images")
+    parser.add_argument("--input-img-dir",   default="data_dir/AerialImageDataset/train_images")
+    parser.add_argument("--input-mask-dir",  default="data_dir/AerialImageDataset/train_masks")
+    parser.add_argument("--output-img-dir",  default="data_dir/AerialImageDataset/train_processed/images")
     parser.add_argument("--output-mask-dir", default="data_dir/AerialImageDataset/train_processed/gt")
+
     parser.add_argument("--mode", type=str, default='val')
     parser.add_argument("--split-size-h", type=int, default=512)
     parser.add_argument("--split-size-w", type=int, default=512)
@@ -205,7 +206,7 @@ if __name__ == "__main__":
     t0 = time.time()
     # for tmp in inp:
     #     patch_format(tmp)
-    mpp.Pool(processes=64).map(patch_format, inp)
+    mpp.Pool(processes=16).map(patch_format, inp)
     t1 = time.time()
     split_time = t1 - t0
     print('images spliting spends: {} s'.format(split_time))

@@ -4,7 +4,7 @@ import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input-img-dir", default="/mnt/public/usr/wangmingze/Datasets/CD/tmp/inria/AerialImageDataset/train/images")
+    parser.add_argument("--input-img-dir",  default="/mnt/public/usr/wangmingze/Datasets/CD/tmp/inria/AerialImageDataset/train/images")
     parser.add_argument("--input-mask-dir", default="/mnt/public/usr/wangmingze/Datasets/CD/tmp/inria/AerialImageDataset/train/gt")
     parser.add_argument("--output-txt-dir", default="/mnt/public/usr/wangmingze/Datasets/CD/tmp/inria/AerialImageDataset/val/images_512_nooverlap")
     return parser.parse_args()
@@ -28,7 +28,7 @@ if __name__ == '__main__':
     a_filenames = os.listdir(img_folder)
     label_filenames = os.listdir(label_folder)
 
-    with Pool(32) as p:
+    with Pool(16) as p:
         results = p.map(process_file, a_filenames)
     # Filter out None and write data_strs to txt file
     with open(txt_dir, 'w') as f:

@@ -8,7 +8,7 @@ import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input-dir", default="data_dir/Levir-CD/train/A")
+    parser.add_argument("--input-dir",  default="data_dir/Levir-CD/train/A")
     parser.add_argument("--output-dir", default="data_dir/Levir-CD/train/A_512_nooverlap")
     return parser.parse_args()
 
@@ -38,6 +38,6 @@ if __name__ == '__main__':
     filenames = [filename for filename in os.listdir(folder_path) if
                  filename.endswith('.png') or filename.endswith('.jpg') or filename.endswith('.tif')]
     
-    with Pool(32) as p:
+    with Pool(16) as p:
         list(tqdm(p.imap(slide_crop, filenames), total=len(filenames)))
     

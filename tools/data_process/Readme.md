@@ -11,7 +11,8 @@ cd WHU_Building_Dataset / Inria_Building_Dataset / Levir_CD_Dataset / S2Looking_
 **Notice:** 
 1. You should replace **data_dir** with your specific path or specific the exact location of **data_dir** in the terminal beforehand.
 2. All labels are saved in uint8 PNG format, where pixel value 255 represents buildings and pixel value 0 represents non-buildings.
-3. Each dataset will eventually form a txt file called ***data_list***, and the data format saved in it will be as follows:
+3. The preprocessing process uses multiprocessing with 16 specified processes. If your machine doesn't have enough resources, you may need to adjust it yourself.
+4. Each dataset will eventually form a txt file called ***data_list***, and the data format saved in it will be as follows:
 ```
 # building extraction
 image, **, **, label, ** 
