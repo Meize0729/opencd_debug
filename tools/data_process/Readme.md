@@ -26,4 +26,30 @@ image_a, image_b, label_cd, label_a, label_b
 1. Now, please double-check if the data_list for your required datasets have been generated and if the quantities match those described in the instructions.
 
 2. Next, you should fill in the absolute path of the generated data_list in the corresponding locations [data_list](../../data_list/) below:
+```
+RSbuilding
+├── ···
+├── ···
+├── data_list
+│   ├── whu
+│   │   ├── train.txt (need fill)
+│   │   ├── test.txt (need fill)
+│   ├── inria
+│   │   ├── train.txt (need fill)
+│   │   ├── test.txt (need fill)
+│   ├── levircd
+│   │   ├── train.txt (need fill)
+│   │   ├── test.txt (need fill)
+│   ├── s2looking
+│   │   ├── train.txt (need fill)
+│   │   ├── test.txt (need fill)
+│   ├── bandon
+│   │   ├── train.txt (need fill)
+│   │   ├── test.txt (need fill)
+│   ├── bandon
+│   │   ├── train.txt (need fill)
+│   │   ├── test.txt (need fill)
+```
+
+3. Additionally, you have the flexibility to mix and match the training and testing data as desired. For example, you can easily merge the 'levir-cd' and 'whu' datasets by simply combining the data_lists of both datasets, as shown like [here](../../data_list/pretrain/train.txt)
 
