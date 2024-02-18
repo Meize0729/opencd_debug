@@ -7,9 +7,11 @@
     </p>
 </div>
 
+<div align="center">
 [![GitHub stars](https://badgen.net/github/stars/Meize0729/opencd_debug)](https://github.com/KyanChen/opencd_debug)
 [![license](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
 [![arXiv](https://img.shields.io/badge/arXiv-2306.16269-b31b1b.svg)](https://arxiv.org/abs/2306.16269)
+</div>
 
 <div align="center">
   <img src="resources/main.png" width="600"/>
