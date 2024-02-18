@@ -15,6 +15,7 @@ model = dict(
         type='mmseg.SwinTransformer',
         # init_cfg=dict(type='Pretrained', checkpoint='/mnt/public/usr/wangmingze/pretrain/swin_B_window12_imagenet22k_pre384_mmseg.pth'),
         # you can download the pretrain weight from mmseg
+        # https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_base_patch4_window12_384_22k.pth
         pretrain_img_size=384,
         
         # base
