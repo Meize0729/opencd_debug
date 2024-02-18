@@ -25,7 +25,70 @@ If you find this project helpful, please give us a star ⭐️, your support is 
 ## Update Log
 
 🌟 **2024.02.18** Release the source code and make the pre-trained weights publicly available.
+
 🌟 **2024.02.18** Updated the paper content, see [Arxiv](https://arxiv.org/abs/2306.16269) for details.
+
+## Table of Contents
+
+- [Introduction](#Introduction)
+- [Update Log](#Update-Log)
+- [Table of Contents](#Table-of-Contents)
+- [Installation](#Installation)
+- [Dataset Preparation](#Dataset-Preparation)
+- [Model Training](#Model-Training)
+- [Model Testing](#Model-Testing)
+- [Image Prediction](#Image-Prediction)
+- [Common Problems](#Common-Problems)
+- [Acknowledgement](#Acknowledgement)
+- [Citation](#Citation)
+- [License](#License)
+- [Contact](#Contact)
+
+## Installation
+
+### Dependencies
+
+- Linux
+- Python 3.7+, recommended 3.9
+- PyTorch 2.0 or higher, recommended 2.0
+- CUDA 11.7 or higher, recommended 11.7
+- MMCV 2.0 or higher, recommended 2.0
+
+
+<details>
+
+**Tips**: We recommend installing the version that has been practically tested and proven to work.
+
+**Step 0**: Install [Miniconda](https://docs.conda.io/projects/miniconda/en/latest/index.html).
+
+**Step 1**: Create a virtual environment named `rsbuilding` and activate it.
+
+```shell
+conda create --name rsbuilding python=3.9
+conda activate rsbuilding
+```
+
+**Step 2**: Install [PyTorch](https://pytorch.org/get-started/locally/), we recommend using conda to install the following version:
+
+```shell
+conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.7 -c pytorch -c nvidia
+```
+
+**Step 3**: Install [MMCV](https://mmcv.readthedocs.io/en/latest/get_started/installation.html). We recommend using pip to install the following version:
+
+```shell
+pip install mmcv==2.0.1 -f https://download.openmmlab.com/mmcv/dist/cu117/torch2.0/index.html -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+**Step 4**: Install other dependencies.
+
+```shell
+pip install -r requirements.txt
+```
+
+</details>
+
+
 
 <!-- 
 <div align="center">

@@ -5,4 +5,3 @@ mmsegmentation==1.0.0
 mmpretrain==1.1.0
 mmdet==3.0.0
 mmengine==0.9.1
-mmcv==2.0.1 -f https://download.openmmlab.com/mmcv/dist/cu117/torch2.0/index.html -i https://pypi.tuna.tsinghua.edu.cn/simple
