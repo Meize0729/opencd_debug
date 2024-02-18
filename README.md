@@ -2,6 +2,9 @@
     <h2>
         RSBuilding: Towards General Remote Sensing Image Building Extraction and Change Detection with Foundation Model
     </h2>
+    <p style="font-size: smaller;">
+        Mingze Wang<sup>†</sup>, [Keyan Chen<sup>†</sup>](https://github.com/KyanChen), Lili Su, Xiaolong Jiang, Baochang Zhang<sup>*</sup>, and Jinhu Lv
+    </p>
 </div>
 <br>
 
@@ -33,10 +36,10 @@ If you find this project helpful, please give us a star ⭐️, your support is 
 - [Introduction](#Introduction)
 - [Update Log](#Update-Log)
 - [Table of Contents](#Table-of-Contents)
-- [Installation](#Installation)
-- [Dataset Preparation](#Dataset-Preparation)
-- [Model Training](#Model-Training)
-- [Model Testing](#Model-Testing)
+- [1.Installation](#1.Installation)
+- [2.Dataset Preparation](#2.Dataset-Preparation)
+- [3.Model Training](#3.Model-Training)
+- [4.Model Testing](#Model-Testing)
 - [Image Prediction](#Image-Prediction)
 - [Common Problems](#Common-Problems)
 - [Acknowledgement](#Acknowledgement)
@@ -44,7 +47,7 @@ If you find this project helpful, please give us a star ⭐️, your support is 
 - [License](#License)
 - [Contact](#Contact)
 
-## Installation
+## 1.Installation
 
 ### Dependencies
 
@@ -54,13 +57,13 @@ If you find this project helpful, please give us a star ⭐️, your support is 
 - CUDA 11.7 or higher, recommended 11.7
 - MMCV 2.0 or higher, recommended 2.0
 
-### Install RSPrompter
+### Install RSBuilding
 
 Download or clone the RSBuilding repository.
 
 ```shell
 git clone git@github.com:Meize0729/RSBuilding.git
-cd RS
+cd RSBuilding
 ```
 
 ### Environment Installation
@@ -102,7 +105,7 @@ pip install -r requirements.txt
 
 </details>
 
-## Dataset Preparation
+## 2.Dataset Preparation
 
 We provide the dataset preparation method used in the paper. Data preparation and preprocessing can be somewhat time-consuming. You may choose to work with only the datasets you wish to use.
 
@@ -112,121 +115,42 @@ You can access detailed preprocessing instructions at the following location:
 cd tools/data_process.md
 ```
 
-Upon completing all the data preprocessing steps along this path, I trust that the train.txt and test.txt files within your [data_list](./data_list/) folder for the datasets you plan to use have been accurately populated with the absolute paths.
+✅ Upon completing all the data preprocessing steps along this path, I trust that the train.txt and test.txt files within your `data_list` folder for the datasets you plan to use have been accurately populated with the absolute paths.
 
 
+## 3. Model Training
 
+The entire training process involves: **Pretrain ➡️ Finetune on specific datasets**.
 
+We provide the configuration files of the models used in the paper, which can be found in the `configs_pretrain` and `configs_finetune` folder. The Config file is completely consistent with the API interface and usage method of MMsegmentation. If you want to know more about the meaning of the parameters, you can refer to the [MMSegmentation documentation](https://mmsegmentation.readthedocs.io/zh-cn/latest/user_guides/1_config.html).
 
+### Pretrain
 
+We offer configuration files for four different backbone models. 
 
+**Step1**: During the pre-training phase, we require the pre-trained weights of the backbone for initialization. You can obtain the pre-trained weights for the [Swin](https://github.com/open-mmlab/mmsegmentation/tree/v1.0.0/configs/swin) series here, and for the [ViT](https://github.com/open-mmlab/mmpretrain/tree/17a886cb5825cd8c26df4e65f7112d404b99fe12/configs/sam) series here, or find specific download links in `configs_pretrain/__base__/models/xxx.py`. We have not included the preprocessing code for the pre-trained weights in this repository, but it is straightforward to handle.
 
+**❗️Step2❗️**: After downloading the pre-trained weights for backbone, you need to replace **Line 32** in `configs_pretrain/__base__/models/xxx.py` with the specific path
 
-<!-- 
-<div align="center">
-  <img src="resources/opencd-logo.png" width="600"/>
-</div>
+**Step3**: And then, use following command to train your own model:
 
-## Introduction
-Open-CD is an open source change detection toolbox based on a series of open source general vision task tools.
+```shell script
+# Single-Card Training
+python tools/train.py configs_pretrain/xxx.py  # xxx.py is the configuration file you want to use
 
-
-## News
-- 4/21/2023 - Open-CD v1.0.0 is released in 1.x branch, based on OpenMMLab 2.0 ! PyTorch 2.0 is also supported ! Enjoy it !
-- 3/14/2023 - Open-CD is upgraded to v0.0.3. Semantic Change Detection (SCD) is supported !
-- 11/17/2022 - Open-CD is upgraded to v0.0.2, requiring a higher version of the MMSegmentation dependency.
-- 9/28/2022 - The code, pre-trained models and logs of [ChangerEx](https://github.com/likyoo/open-cd/tree/main/configs/changer) are available. :yum:
-- 9/20/2022 - Our paper [Changer: Feature Interaction is What You Need for Change Detection](https://arxiv.org/abs/2209.08290) is available!
-- 7/30/2022 - Open-CD is publicly available!
-
-## Benchmark and model zoo
-
-Supported toolboxes:
-
-- [x] [OpenMMLab Toolkits](https://github.com/open-mmlab)
-- [x] [pytorch-image-models](https://github.com/rwightman/pytorch-image-models)
-- [ ] ...
-
-Supported change detection model:
-(_The code of some models are borrowed directly from their official repositories._)
-
-- [x] [FC-EF (ICIP'2018)](configs/fcsn)
-- [x] [FC-Siam-diff (ICIP'2018)](configs/fcsn)
-- [x] [FC-Siam-conc (ICIP'2018)](configs/fcsn)
-- [x] [STANet (RS'2020)](configs/stanet)
-- [x] [IFN (ISPRS'2020)](configs/ifn)
-- [x] [SNUNet (GRSL'2021)](configs/snunet)
-- [x] [BiT (TGRS'2021)](configs/bit)
-- [x] [ChangeFormer (IGARSS'22)](configs/changeformer)
-- [x] [TinyCD (NCA'2023)](configs/tinycd)
-- [x] [Changer (TGRS'2023)](configs/changer)
-- [x] [HANet (JSTARS'2023)](configs/hanet)
-- [x] [TinyCDv2 (Under Review)](configs/tinycd_v2)
-- [ ] ...
-
-Supported datasets: | [Descriptions](https://github.com/wenhwu/awesome-remote-sensing-change-detection)
-- [x] [LEVIR-CD](https://justchenhao.github.io/LEVIR/)
-- [x] [S2Looking](https://github.com/S2Looking/Dataset)
-- [x] [SVCD](https://drive.google.com/file/d/1GX656JqqOyBi_Ef0w65kDGVto-nHrNs9/edit)
-- [x] [DSIFN](https://github.com/GeoZcx/A-deeply-supervised-image-fusion-network-for-change-detection-in-remote-sensing-images/tree/master/dataset)
-- [x] [CLCD](https://github.com/liumency/CropLand-CD)
-- [x] [RSIPAC](https://engine.piesat.cn/ai/autolearning/index.html#/dataset/detail?key=8f6c7645-e60f-42ce-9af3-2c66e95cfa27)
-- [x] [SECOND](http://www.captain-whu.com/PROJECT/)
-- [x] [Landsat](https://figshare.com/articles/figure/Landsat-SCD_dataset_zip/19946135/1)
-- [x] [BANDON](https://github.com/fitzpchao/BANDON)
-- [ ] ...
-
-## Usage
-
-[Docs](https://github.com/open-mmlab/mmsegmentation/tree/master/docs)
-
-Please refer to [get_started.md](https://github.com/open-mmlab/mmsegmentation/blob/master/docs/en/get_started.md#installation) in mmseg.
-
-A Colab tutorial is also provided. You may directly run on [Colab](https://colab.research.google.com/drive/1puZY5R8fwlL6um6pHbgbM1NTYZUXdK2J?usp=sharing). (thanks to [@Agustin](https://github.com/AgustinNormand) for this demo) [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1puZY5R8fwlL6um6pHbgbM1NTYZUXdK2J?usp=sharing)
-
-#### simple usage
-```
-# Install OpenMMLab Toolkits as Python packages
-pip install -U openmim
-mim install mmengine
-mim install "mmcv>=2.0.0"
-mim install "mmpretrain>=1.0.0rc7"
-pip install "mmsegmentation>=1.0.0"
-pip install "mmdet>=3.0.0"
-```
-```
-git clone https://github.com/likyoo/open-cd.git
-cd open-cd
-pip install -v -e .
-```
-train
-```
-python tools/train.py configs/changer/changer_ex_r18_512x512_40k_levircd.py --work-dir ./changer_r18_levir_workdir
-```
-infer
-```
-# get .png results
-python tools/test.py configs/changer/changer_ex_r18_512x512_40k_levircd.py  changer_r18_levir_workdir/latest.pth --show-dir tmp_infer
-# get metrics
-python tools/test.py configs/changer/changer_ex_r18_512x512_40k_levircd.py  changer_r18_levir_workdir/latest.pth
+# Multi-Card Training
+sh ./tools/dist_train.sh configs_pretrain/xxx.py ${GPU_NUM}  # xxx.py is the configuration file you want to use, GPU_NUM is the number of GPUs used
 ```
 
-## Citation
+### Finetune
 
-If you find this project useful in your research, please consider cite:
+**Step1**: 
 
-```bibtex
-@ARTICLE{10129139,
-  author={Fang, Sheng and Li, Kaiyu and Li, Zhe},
-  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
-  title={Changer: Feature Interaction is What You Need for Change Detection}, 
-  year={2023},
-  volume={61},
-  number={},
-  pages={1-11},
-  doi={10.1109/TGRS.2023.3277496}}
-```
 
-## License
 
-Open-CD is released under the Apache 2.0 license. -->
+
+
+
+
+
+
