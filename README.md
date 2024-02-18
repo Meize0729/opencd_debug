@@ -5,9 +5,23 @@
 </div>
 <br>
 
+<div align="center">
+  <img src="resources/overview.png" width="800"/>
+</div>
+
+
 [![GitHub stars](https://badgen.net/github/stars/Meize0729/opencd_debug)](https://github.com/KyanChen/opencd_debug)
 [![license](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
 [![arXiv](https://img.shields.io/badge/arXiv-2306.16269-b31b1b.svg)](https://arxiv.org/abs/2306.16269)
+
+## Introduction
+
+This repository is the code implementation of the paper [RSPrompter: Learning to Prompt for Remote Sensing Instance Segmentation based on Visual Foundation Model](https://arxiv.org/abs/2306.16269), which is based on the [MMDetection](https://github.com/open-mmlab/mmdetection/tree/main) project.
+
+The current branch has been tested under PyTorch 2.x and CUDA 12.1, supports Python 3.7+, and is compatible with most CUDA versions.
+
+If you find this project helpful, please give us a star ⭐️, your support is our greatest motivation.
+
 <!-- 
 <div align="center">
   <img src="resources/opencd-logo.png" width="600"/>
