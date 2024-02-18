@@ -12,7 +12,6 @@ from mmengine.model.weight_init import trunc_normal_
 from mmengine.dist import is_main_process
 
 from opencd.registry import MODELS
-from peft import get_peft_config, get_peft_model
 from mmpretrain.models.utils import LayerNorm2d, build_norm_layer, resize_pos_embed, to_2tuple
 
 def window_partition(x: torch.Tensor,
@@ -706,38 +705,38 @@ class ViTSAM_Normal(BaseModule):
         return layer_depth, num_layers
 
 
-@MODELS.register_module()
-class ViTSAMVisualBackbone_Normal(BaseModule):
-    def __init__(self,
-                 model_cfg,
-                 peft_config=None,
-                 init_cfg=None,
-                 ):
-        super(ViTSAMVisualBackbone_Normal, self).__init__(init_cfg)
-        default_peft_config = {
-            "peft_type": "LORA",
-            "task_type": "none",
-            "inference_mode": False,
-            "r": 32,
-            # "target_modules": ["attn_qkv", "attn_outproj", "c_fc", "c_proj"],
-            "target_modules": ["attn_qkv", "attn_outproj"],
-            "lora_alpha": 32,
-            "lora_dropout": 0.05,
-            "fan_in_fan_out": False,
-            "bias": "lora_only",
-        }
-        if peft_config is not None:
-            default_peft_config.update(peft_config)
-            peft_config = get_peft_config(default_peft_config)
+# @MODELS.register_module()
+# class ViTSAMVisualBackbone_Normal(BaseModule):
+#     def __init__(self,
+#                  model_cfg,
+#                  peft_config=None,
+#                  init_cfg=None,
+#                  ):
+#         super(ViTSAMVisualBackbone_Normal, self).__init__(init_cfg)
+#         default_peft_config = {
+#             "peft_type": "LORA",
+#             "task_type": "none",
+#             "inference_mode": False,
+#             "r": 32,
+#             # "target_modules": ["attn_qkv", "attn_outproj", "c_fc", "c_proj"],
+#             "target_modules": ["attn_qkv", "attn_outproj"],
+#             "lora_alpha": 32,
+#             "lora_dropout": 0.05,
+#             "fan_in_fan_out": False,
+#             "bias": "lora_only",
+#         }
+#         if peft_config is not None:
+#             default_peft_config.update(peft_config)
+#             peft_config = get_peft_config(default_peft_config)
 
-        model = MODELS.build(model_cfg)
-        if peft_config is not None:
-            self.peft_model = get_peft_model(model, peft_config)
-            if is_main_process():
-                self.peft_model.print_trainable_parameters()
-        else:
-            self.peft_model = model
+#         model = MODELS.build(model_cfg)
+#         if peft_config is not None:
+#             self.peft_model = get_peft_model(model, peft_config)
+#             if is_main_process():
+#                 self.peft_model.print_trainable_parameters()
+#         else:
+#             self.peft_model = model
 
-    def forward(self, x):
-        x = self.peft_model(x)
-        return x
+#     def forward(self, x):
+#         x = self.peft_model(x)
+#         return x

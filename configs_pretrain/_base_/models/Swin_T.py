@@ -42,7 +42,7 @@ model = dict(
         in_channels=[96, 192, 384, 768], 
         out_channels=256,
         drop=0.0,
-        loss_type='FocalLoss',
+        loss_type='BCELoss',
         loss_weight=[1,1,1],
     ),
     train_cfg=dict(),

@@ -1,8 +1,0 @@
-
-/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/test_nooverlap.txt
-/mnt/public/usr/wangmingze/Datasets/CD/S2Looking/test_nooverlap.txt
-
-/mnt/public/usr/wangmingze/Datasets/CD/WHU-main/test_tif.txt
-/mnt/public/usr/wangmingze/Datasets/CD/AerialImageDataset/val.txt
-
-

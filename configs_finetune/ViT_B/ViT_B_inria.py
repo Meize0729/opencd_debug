@@ -1,5 +1,5 @@
 '''
-python tools/train.py configs_finetune_new/ViT_B/ViT_B_inria.py
+python tools/train.py configs_finetune/ViT_B/ViT_B_inria.py
 '''
 
 _base_ = [
@@ -16,20 +16,22 @@ bs_mult = 1
 num_workers = 8
 persistent_workers = True
 
-# data_list path !!!! must change this !!!!
-train_data_list = '/mnt/public/usr/wangmingze/opencd/data_list/inria/data_list_inria_train.txt'
-test_data_list = '/mnt/public/usr/wangmingze/opencd/data_list/inria/data_list_inria_test.txt'
+# data_list path
+train_data_list = 'data_list/inria/train.txt'
+test_data_list = 'data_list/inria/test.txt'
 
 # training schedule for pretrain
 max_iters = 4e4
 val_interval = 200
+logger_interval = 20
 base_lr = 0.0001 * (bs * gpu_nums / 16) * bs_mult # lr is related to bs*gpu_num, default 16-0.0001
 
 
 # If you want to train with some backbone init, you must change the dir for your personal save dir path
 # But I think you will use our pretrained weight, you may do not need backbone_checkpoint
 backbone_checkpoint = None
-# load_from = 'the checkpoint path' # !!!! must change this !!!!
+load_from = 'the checkpoint path' # !!!! must change this !!!!
+load_from = '/mnt/public/usr/wangmingze/work_dir/cd_0206/pretrain/ViT_B.pth' # !!!! must change this !!!!
 resume_from = None
 
 # If you want to use wandb, make it to 1
@@ -41,7 +43,7 @@ work_dir = '/mnt/public/usr/wangmingze/work_dir/finetune/' + names
 
 
 
-""" ************************** 模型 **************************"""
+""" ************************** model **************************"""
 model = dict(
     backbone=dict(
         init_cfg=dict(type='Pretrained', checkpoint=backbone_checkpoint) if backbone_checkpoint else None
@@ -77,9 +79,21 @@ optim_wrapper = dict(
         type='AdamW',
         lr=base_lr
         ),
+    # backbone lr_mult = 0.01
     )
 
-""" ************************** 可视化 **************************"""
+train_cfg = dict(type='IterBasedTrainLoop', max_iters=max_iters, val_interval=val_interval)
+val_cfg = dict(type='ValLoop')
+test_cfg = dict(type='TestLoop')
+default_hooks = dict(
+    timer=dict(type='IterTimerHook'),
+    logger=dict(type='LoggerHook', interval=logger_interval, log_metric_by_epoch=False),
+    param_scheduler=dict(type='ParamSchedulerHook'),
+    checkpoint=dict(type='CheckpointHook', by_epoch=False, interval=val_interval),
+    sampler_seed=dict(type='DistSamplerSeedHook'),
+    visualization=dict(type='CDVisualizationHook', interval=10, img_shape=(512, 512, 3)))
+
+""" ************************** visualization **************************"""
 if wandb:
     vis_backends = [dict(type='CDLocalVisBackend'),
                     dict(

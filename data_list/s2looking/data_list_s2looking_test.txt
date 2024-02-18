@@ -1,1 +1,0 @@
-/mnt/public/usr/wangmingze/Datasets/CD/S2Looking/test_nooverlap.txt

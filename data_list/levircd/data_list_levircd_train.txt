@@ -1,2 +1,0 @@
-/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/train_1024.txt
-#/mnt/public/usr/wangmingze/Datasets/CD/levir-CD/val.txt

@@ -31,7 +31,6 @@ model = dict(
         # in_channels=1024,
         in_channels=768,
         out_channels=256,
-        dataset_type='',
         drop=0.0,
         loss_type='BCELoss',
         loss_weight=[1,1,1],

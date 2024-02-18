@@ -17,9 +17,9 @@ bs_mult = 1
 num_workers = 8
 persistent_workers = True
 
-# data_list path !!!! must change this !!!!
-train_data_list = '/mnt/public/usr/wangmingze/opencd/data_list/levircd/data_list_levircd_test.txt'
-test_data_list = '/mnt/public/usr/wangmingze/opencd/data_list/levircd/data_list_levircd_test.txt'
+# data_list path
+train_data_list = 'data_list/pretrain/train.txt'
+test_data_list = 'data_list/pretrain/test.txt'
 
 # training schedule for pretrain
 max_iters = 40e4
@@ -29,14 +29,14 @@ base_lr = 0.0001 * (bs * gpu_nums / 16) * bs_mult # lr is related to bs*gpu_num,
 
 # If you want to train with some backbone init, you must change the dir for your personal save dir path
 # But I think you will use our pretrained weight, you may do not need backbone_checkpoint
-backbone_checkpoint = '/mnt/public/usr/wangmingze/pretrain/sam_vit_b_mm_allin.pth'
+backbone_checkpoint = 'pretrain/sam_vit_b_mm_allin.pth'
 # load_from = 'the checkpoint path' # !!!! must change this !!!!
 resume_from = None
 
 # If you want to use wandb, make it to 1
 wandb = 0
 
-# You can define which dir want to save checkpoint and loggings
+# You must change which dir want to save checkpoint and loggings
 names = 'ViT_B'
 work_dir = '/mnt/public/usr/wangmingze/work_dir/opencd_terminal/pretrain/' + names
 
@@ -75,8 +75,8 @@ val_dataloader = dict(
 optim_wrapper = dict(
     optimizer=dict(
         lr=base_lr
-        )
     )
+)
 
 param_scheduler = [
     dict(
@@ -106,9 +106,10 @@ if wandb:
                         init_kwargs={
                             'entity': "wangmingze",
                             'project': "opencd_all_v4",
-                            'name': names,}
-                            )
-                    ]
+                            'name': names
+                        }
+                    )
+    ]
 else:
     vis_backends = [dict(type='CDLocalVisBackend')]
 

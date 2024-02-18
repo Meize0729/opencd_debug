@@ -1,11 +1,11 @@
 '''
-python tools/train.py configs_finetune/Swin_B/Swin_B_s2looking.py
+python tools/train.py configs_finetune/ViT_L/ViT_L_bandon.py
 '''
 
 _base_ = [
     '../_base_/default_runtime.py',
     '../_base_/datasets/standard_512x512_foundationdataset.py',
-    '../_base_/models/Swin_B.py',
+    '../_base_/models/ViT_L.py',
     '../_base_/schedules/schedule_default.py',
 ]
 
@@ -17,8 +17,8 @@ num_workers = 8
 persistent_workers = True
 
 # data_list path
-train_data_list = 'data_list/s2looking/train.txt'
-test_data_list = 'data_list/s2looking/test.txt'
+train_data_list = 'data_list/bandon/train.txt'
+test_data_list = 'data_list/bandon/test.txt'
 
 # training schedule for pretrain
 max_iters = 4e4
@@ -31,14 +31,14 @@ base_lr = 0.0001 * (bs * gpu_nums / 16) * bs_mult # lr is related to bs*gpu_num,
 # But I think you will use our pretrained weight, you may do not need backbone_checkpoint
 backbone_checkpoint = None
 load_from = 'the checkpoint path' # !!!! must change this !!!!
-load_from = '/mnt/public/usr/wangmingze/work_dir/cd_0206/pretrain/Swin_B.pth' # !!!! must change this !!!!
+load_from = '/mnt/public/usr/wangmingze/work_dir/cd_0206/pretrain/ViT_L.pth' # !!!! must change this !!!!
 resume_from = None
 
 # If you want to use wandb, make it to 1
 wandb = 0
 
 # You can define which dir want to save checkpoint and loggings
-names = 'Swin_B_s2looking'
+names = 'ViT_L_bandon'
 work_dir = '/mnt/public/usr/wangmingze/work_dir/finetune/' + names
 
 

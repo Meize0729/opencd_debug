@@ -1,1 +1,0 @@
-/mnt/public/usr/wangmingze/Datasets/CD/BANDON_BX/bandon_bx_train.txt

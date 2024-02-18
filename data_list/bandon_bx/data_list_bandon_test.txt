@@ -1,4 +1,0 @@
-# /mnt/public/usr/wangmingze/Datasets/CD/BANDON/test_bx.txt
-# /mnt/public/usr/wangmingze/Datasets/CD/BANDON/test_cd.txt
-# /mnt/public/usr/wangmingze/Datasets/CD/BANDON_CD/bandon_cd_test.txt
-/mnt/public/usr/wangmingze/Datasets/CD/BANDON_BX/bandon_bx_test.txt

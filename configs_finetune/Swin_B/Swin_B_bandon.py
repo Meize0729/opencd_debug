@@ -1,5 +1,5 @@
 '''
-python tools/train.py configs_finetune/Swin_B/Swin_B_s2looking.py
+python tools/train.py configs_finetune/Swin_B/Swin_B_bandon.py
 '''
 
 _base_ = [
@@ -17,8 +17,8 @@ num_workers = 8
 persistent_workers = True
 
 # data_list path
-train_data_list = 'data_list/s2looking/train.txt'
-test_data_list = 'data_list/s2looking/test.txt'
+train_data_list = 'data_list/bandon/train.txt'
+test_data_list = 'data_list/bandon/test.txt'
 
 # training schedule for pretrain
 max_iters = 4e4
@@ -38,7 +38,7 @@ resume_from = None
 wandb = 0
 
 # You can define which dir want to save checkpoint and loggings
-names = 'Swin_B_s2looking'
+names = 'Swin_B_bandon'
 work_dir = '/mnt/public/usr/wangmingze/work_dir/finetune/' + names
 
 
@@ -48,7 +48,7 @@ model = dict(
     backbone=dict(
         init_cfg=dict(type='Pretrained', checkpoint=backbone_checkpoint) if backbone_checkpoint else None
     ),
-    finetune_cfg=None, #
+    finetune_cfg = None
 )
 
 
