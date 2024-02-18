@@ -1,18 +1,17 @@
 # Data process
-Please go to this dir for data process
-```shell script
-cd tools/data_process
-```
-Next, go to the dataset you want to use and proceed with further processing. **I believe that these preprocessing steps and code will satisfy you and won't consume a lot of your time.**
+
+## Step 1
+Next, go to the dataset you want to use and proceed with further processing. 
+
+**I believe that these preprocessing steps and code will satisfy you and won't consume a lot of your time. Be sure to pay attention to the following tips, especially the third one.**
 ```shell script
 # must choose one
-cd WHU_Building_Dataset / Inria_Building_Dataset / Levir_CD_Dataset / S2Looking_Dataset
+cd WHU_Building_Dataset / Inria_Building_Dataset / Levir_CD_Dataset / S2Looking_Dataset / BANDON_Dataset
 ```
 **Notice:** 
 1. You should replace **data_dir** with your specific path or specific the exact location of **data_dir** in the terminal beforehand.
-2. All labels are saved in uint8 PNG format, where pixel value 255 represents buildings and pixel value 0 represents non-buildings.
-3. The preprocessing process uses multiprocessing with 16 specified processes. If your machine doesn't have enough resources, you may need to adjust it yourself.
-4. Each dataset will eventually form a txt file called ***data_list***, and the data format saved in it will be as follows:
+2. All labels are saved in uint8 PNG format, where pixel value **255** represents buildings and pixel value **0** represents non-buildings.
+3. Each dataset will eventually form a txt file called ***data_list***, and the data format saved in it will be as follows:
 ```
 # building extraction
 image, **, **, label, ** 
@@ -21,3 +20,9 @@ image_a, image_b, label_cd, **, **
 # both
 image_a, image_b, label_cd, label_a, label_b
 ```
+
+## Step 2
+
+1. Now, please double-check if the data_list for your required datasets have been generated and if the quantities match those described in the instructions.
+
+2. Next, you should fill in the absolute path of the generated data_list in the corresponding locations [data_list](data_list/) below:
