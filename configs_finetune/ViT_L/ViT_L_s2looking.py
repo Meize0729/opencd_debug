@@ -30,7 +30,7 @@ base_lr = 0.0001 * (bs * gpu_nums / 16) * bs_mult # lr is related to bs*gpu_num,
 # If you want to train with some backbone init, you must change the dir for your personal save dir path
 # But I think you will use our pretrained weight, you may do not need backbone_checkpoint
 backbone_checkpoint = None
-# load_from = 'the checkpoint path' # !!!! must change this !!!!
+load_from = 'the checkpoint path' # !!!! must change this !!!!
 resume_from = None
 
 # If you want to use wandb, make it to 1

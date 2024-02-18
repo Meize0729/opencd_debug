@@ -10,7 +10,7 @@
 
 
 <div align="center">
-  <img src="resources/overview.png" width="400"/>
+  <img src="resources/main.png" width="600"/>
 </div>
 
 
@@ -127,11 +127,13 @@ We provide the configuration files of the models used in the paper, which can be
 
 ### Pretrain
 
-We offer configuration files for four different backbone models. 
+We offer configuration files for four different backbone models. The pre-training process can be skipped as we have released our pre-trained weights.
+
+During the pre-training process, the training will be conducted on the datasets listed in `data_list/pretrain/train.txt`. You can add or remove any dataset as needed, while monitoring the metrics using the datasets shown in `data_list/pretrain/test.txt`.
 
 **Step1**: During the pre-training phase, we require the pre-trained weights of the backbone for initialization. You can obtain the pre-trained weights for the [Swin](https://github.com/open-mmlab/mmsegmentation/tree/v1.0.0/configs/swin) series here, and for the [ViT](https://github.com/open-mmlab/mmpretrain/tree/17a886cb5825cd8c26df4e65f7112d404b99fe12/configs/sam) series here, or find specific download links in `configs_pretrain/__base__/models/xxx.py`. We have not included the preprocessing code for the pre-trained weights in this repository, but it is straightforward to handle.
 
-**❗️Step2❗️**: After downloading the pre-trained weights for backbone, you need to replace **Line 32** in `configs_pretrain/__base__/models/xxx.py` with the specific path
+**❗️Step2❗️**: After downloading the pre-trained weights for backbone, you need to replace **Line 32** in `configs_pretrain/xxx.py` with the specific path. Meanwhile, change the **Line 41** to the location where you want to save the training logs and weights.
 
 **Step3**: And then, use following command to train your own model:
 
@@ -145,7 +147,22 @@ sh ./tools/dist_train.sh configs_pretrain/xxx.py ${GPU_NUM}  # xxx.py is the con
 
 ### Finetune
 
-**Step1**: 
+**Step1**: Download the pre-trained model from following link: [Baidu NetDisk]() and [Google Drive](). If you use your own pre-trained weights, you can ignore the above steps.
+
+**❗️Step2❗️**: After downloading the pre-trained weights, you need to replace **Line 33** in `configs_finetune/***/xxx.py` with the specific path. Meanwhile, change the **Line 41** to the location where you want to save the training logs and weights.
+
+**Step3**: And then, use following command to train your own model or use the command specified in the configuration file to start the training:
+
+```shell script
+# Single-Card Training
+python tools/train.py configs_finetune/xxx.py  # xxx.py is the configuration file you want to use
+
+# Multi-Card Training
+sh ./tools/dist_train.sh configs_finetune/xxx.py ${GPU_NUM}  # xxx.py is the configuration file you want to use, GPU_NUM is the number of GPUs used
+```
+
+## 4. Model Testing
+
 
 
 

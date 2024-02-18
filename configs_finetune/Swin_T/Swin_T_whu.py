@@ -26,11 +26,11 @@ val_interval = 200
 logger_interval = 20
 base_lr = 0.0001 * (bs * gpu_nums / 16) * bs_mult # lr is related to bs*gpu_num, default 16-0.0001
 
+
 # If you want to train with some backbone init, you must change the dir for your personal save dir path
 # But I think you will use our pretrained weight, you may do not need backbone_checkpoint
 backbone_checkpoint = None
 load_from = 'the checkpoint path' # !!!! must change this !!!!
-load_from = '/mnt/public/usr/wangmingze/work_dir/cd_0206/pretrain/Swin_T.pth' # !!!! must change this !!!!
 resume_from = None
 
 # which part you want to finetune

@@ -31,7 +31,6 @@ base_lr = 0.0001 * (bs * gpu_nums / 16) * bs_mult # lr is related to bs*gpu_num,
 # But I think you will use our pretrained weight, you may do not need backbone_checkpoint
 backbone_checkpoint = None
 load_from = 'the checkpoint path' # !!!! must change this !!!!
-load_from = '/mnt/public/usr/wangmingze/work_dir/cd_0206/pretrain/Swin_B.pth' # !!!! must change this !!!!
 resume_from = None
 
 # If you want to use wandb, make it to 1
