@@ -6,7 +6,7 @@
 <br>
 
 <div align="center">
-  <img src="resources/overview.png" width="800"/>
+  <img src="resources/overview.png" width="400"/>
 </div>
 
 
