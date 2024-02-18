@@ -36,17 +36,17 @@ If you find this project helpful, please give us a star ⭐️, your support is 
 - [Introduction](#Introduction)
 - [Update Log](#Update-Log)
 - [Table of Contents](#Table-of-Contents)
-- [1.Installation](#1.Installation)
-- [2.Dataset Preparation](#2.Dataset-Preparation)
-- [3.Model Training](#3.Model-Training)
-- [4.Model Testing](#Model-Testing)
+- [1.Installation](#1.-Installation)
+- [2.Dataset Preparation](#2.-Dataset-Preparation)
+- [3.Model Training](#3.-Model-Training)
+- [4.Model Testing](#4.-Model-Testing)
 - [Common Problems](#Common-Problems)
 - [Acknowledgement](#Acknowledgement)
 - [Citation](#Citation)
 - [License](#License)
 - [Contact](#Contact)
 
-## 1.Installation
+## 1. Installation
 
 ### Dependencies
 
@@ -104,7 +104,7 @@ pip install -r requirements.txt
 
 </details>
 
-## 2.Dataset Preparation
+## 2. Dataset Preparation
 
 We provide the dataset preparation method used in the paper. Data preparation and preprocessing can be somewhat time-consuming. You may choose to work with only the datasets you wish to use.
 
