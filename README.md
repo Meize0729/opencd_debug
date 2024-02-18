@@ -12,7 +12,7 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2306.16269-b31b1b.svg)](https://arxiv.org/abs/2306.16269)
 
 <div align="center">
-  <img src="resources/main.png" width="600"/>
+  <img src="resources/main.png" width="800"/>
 </div>
 
 
@@ -40,7 +40,6 @@ If you find this project helpful, please give us a star ⭐️, your support is 
 - [2.Dataset Preparation](#2.Dataset-Preparation)
 - [3.Model Training](#3.Model-Training)
 - [4.Model Testing](#Model-Testing)
-- [Image Prediction](#Image-Prediction)
 - [Common Problems](#Common-Problems)
 - [Acknowledgement](#Acknowledgement)
 - [Citation](#Citation)
@@ -162,10 +161,47 @@ sh ./tools/dist_train.sh configs_finetune/xxx.py ${GPU_NUM}  # xxx.py is the con
 
 ## 4. Model Testing
 
+After you have obtained the fine-tuned model weights on a specific dataset, you can perform metric testing using the following command.
 
+```shell script
+# Single-Card Testing
+python tools/test.py configs_finetune/***/xxx.py ${CHECKPOINT_FILE} # xxx.py is the configuration file you want to use, CHECKPOINT_FILE is the checkpoint file you want to use
 
+# Multi-Card Testing
+sh ./tools/dist_train.sh configs_finetune/***/xxx.py ${CHECKPOINT_FILE} ${GPU_NUM}  # xxx.py is the configuration file you want to use, CHECKPOINT_FILE is the checkpoint file you want to use, GPU_NUM is the number of GPUs used
+```
 
+## Common Problems
 
+<details>
+</details>
+
+## Acknowledgement
+
+This project is developed based on the [Open-cd](https://github.com/likyoo/open-cd) project. Thanks to the developers of the Open-cd project.
+
+## Citation
+
+If you use the code, performance benchmarks and pre-trained weights of this project in your research, please refer to the bibtex below to cite RSBuilding.
+
+```
+@article{chen2023rsprompter,
+  title={RSPrompter: Learning to prompt for remote sensing instance segmentation based on visual foundation model},
+  author={Chen, Keyan and Liu, Chenyang and Chen, Hao and Zhang, Haotian and Li, Wenyuan and Zou, Zhengxia and Shi, Zhenwei},
+  journal={arXiv preprint arXiv:2306.16269},
+  year={2023}
+}
+```
+
+## License
+
+This project is licensed under the [Apache 2.0 license](LICENSE).
+
+## Contact
+
+If you have any other questions❓, please contact wmz20000729@gmail.com in time 👬.
+
+We will certainly do our utmost to assist you, and your inquiries will also contribute significantly to the optimization of this project.
 
 
 
