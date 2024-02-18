@@ -54,6 +54,11 @@ If you find this project helpful, please give us a star ⭐️, your support is 
 - CUDA 11.7 or higher, recommended 11.7
 - MMCV 2.0 or higher, recommended 2.0
 
+### Environment Installation
+
+We recommend using Miniconda for installation. The following command will create a virtual environment named `rsbuilding` and install PyTorch and MMCV.
+
+Note: If you have experience with PyTorch and have already installed it, you can skip to the next section. Otherwise, you can follow these steps to prepare.
 
 <details>
 
@@ -87,6 +92,7 @@ pip install -r requirements.txt
 ```
 
 </details>
+
 
 
 
