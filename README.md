@@ -1,4 +1,15 @@
 <div align="center">
+    <h2>
+        RSBuilding: Towards General Remote Sensing Image Building Extraction and Change Detection with Foundation Model
+    </h2>
+</div>
+<br>
+
+[![GitHub stars](https://badgen.net/github/stars/KyanChen/RSPrompter)](https://github.com/KyanChen/RSPrompter)
+[![license](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
+[![arXiv](https://img.shields.io/badge/arXiv-2306.16269-b31b1b.svg)](https://arxiv.org/abs/2306.16269)
+<!-- 
+<div align="center">
   <img src="resources/opencd-logo.png" width="600"/>
 </div>
 
@@ -104,4 +115,4 @@ If you find this project useful in your research, please consider cite:
 
 ## License
 
-Open-CD is released under the Apache 2.0 license.
+Open-CD is released under the Apache 2.0 license. -->
