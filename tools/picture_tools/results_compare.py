@@ -5,10 +5,6 @@ from multiprocessing import Pool
 from tqdm import tqdm
 import numpy as np
 
-# 这是你的字符串列表
-# strings = ['fc_siam_conc', 'fc_siam_diff', 'bit_r18', 'snunet_c32', 'tinycd', 'tinycd_v2_l', 
-#            'changeformer_mitb0', 'changeformer_mitb1', 'changer_s50', 'ViT_L_finetune']
-
 strings = [
     '/mnt/public/usr/wangmingze/Datasets/CD/AerialImageDataset/val/images_512_nooverlap',
     '/mnt/public/usr/wangmingze/opencd/pictures_for_bx_ablation/inria/unet/vis_data/compare_pixel',
@@ -96,12 +92,3 @@ for file_name in file_names:
 
     # 等待用户按回车键
     input("Press Enter to continue...")
-
-# file_names = ['test_82_crop_3.png', 'test_103_crop_0.png', 'test_21_crop_3.png', 'test_71_crop_3.png', 'test_21_crop_1.png', 'test_113_crop_2.png', 'test_113_crop_3.png', 'test_77_crop_3.png']
-# 'test_10_crop_3.png', '
-# ['121.png', '123.png', '125.png','137.png', '143.png', 
-
-# good
-# file_names = ['128.png', '143.png', '209.png', '2_1380.png', '2_1403.png', '2_1449.png', '2_1520.png', '2_1568.png', '2_1569.png', '2_176.png', '2_863.png', '2_932.png', '491.png', '83.png']
-# file_names = ['austin1_0_39.png', 'austin1_0_40.png', 'austin1_0_58.png', 'austin1_0_9.png','austin2_0_42.png', 'austin3_0_0.png', 'austin5_0_59.png']
-# file_names = ['austin2_0_99.png', 'austin4_0_40.png', 'austin4_0_41.png', 'chicago1_0_41.png', 'chicago3_0_15.png', 'chicago4_0_31.png', 'chicago5_0_41.png', 'tyrol-w4_0_50.png', 'vienna2_0_43.png', 'vienna2_0_53.png','vienna2_0_89.png','vienna3_0_24.png']

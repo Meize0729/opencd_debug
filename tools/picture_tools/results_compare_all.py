@@ -126,22 +126,3 @@ for file_name in file_names_cd:
 
     # 等待用户按回车键
     input("Press Enter to continue...")
-
-# ['bj_t1VSt2_L81_00639_784071_crop_6.png', 'bj_t1VSt2_L81_00639_784111_crop_13.png','bj_t1VSt2_L81_00647_784079_crop_1.png','bj_t1VSt2_L81_00647_784079_crop_4.png','bj_t1VSt2_L81_00647_784079_crop_6.png', 'bj_t1VSt2_L81_00647_784175_crop_4.png', 'bj_t1VSt2_L81_00647_784255_crop_10.png', 'bj_t1VSt2_L81_00647_784295_crop_0.png']
-
-# ['bj_t1VSt2_L81_00655_784071_crop_5.png', ]
-['bj_t1VSt2_L81_00655_784111_crop_5.png', 'bj_t1VSt2_L81_00655_784199_crop_1.png', 'bj_t1VSt2_L81_00663_784207_crop_5.png', 'bj_t1VSt2_L81_00671_784263_crop_0.png', 'bj_t1VSt2_L81_00671_784263_crop_8.png', 'bj_t1VSt2_L81_00679_784031_crop_15.png', 'bj_t1VSt2_L81_00655_784311_crop_8.png', 'bj_t1VSt2_L81_00679_784167_crop_7.png', 'bj_t1VSt2_L81_00687_784271_crop_10.png', 'bj_t1VSt2_L81_00839_784255_crop_9.png', 'bj_t1VSt3_L81_00655_784111_crop_1.png', 'bj_t1VSt3_L81_00839_784055_crop_12.png', 'bj_t1VSt3_L81_00839_784255_crop_4.png', 'bj_t1VSt3_L81_00871_783975_crop_11.png', 'bj_t2VSt3_L81_00647_784079_crop_8.png','bj_t2VSt3_L81_00655_784311_crop_10.png', 'bj_t2VSt3_L81_00671_784095_crop_11.png', 'bj_t2VSt3_L81_00687_784271_crop_2.png', 'bj_t2VSt3_L81_00831_784199_crop_2.png', 'bj_t2VSt3_L81_00831_784199_crop_3.png',
-'bj_t2VSt3_L81_00839_784055_crop_12.png', 'bj_t2VSt3_L81_00879_784247_crop_10.png', 'sh_t1VSt2_L81_892807_780503_crop_3.png', 
-]
-# file_names = ['test_82_crop_3.png', 'test_103_crop_0.png', 'test_21_crop_3.png', 'test_71_crop_3.png', 'test_21_crop_1.png', 'test_113_crop_2.png', 'test_113_crop_3.png', 'test_77_crop_3.png']
-# 'test_10_crop_3.png', '
-# ['121.png', '123.png', '125.png','137.png', '143.png', 
-
-# good
-# file_names = ['128.png', '143.png', '209.png', '2_1380.png', '2_1403.png', '2_1449.png', '2_1520.png', '2_1568.png', '2_1569.png', '2_176.png', '2_863.png', '2_932.png', '491.png', '83.png']
-# file_names = ['austin1_0_39.png', 'austin1_0_40.png', 'austin1_0_58.png', 'austin1_0_9.png','austin2_0_42.png', 'austin3_0_0.png', 'austin5_0_59.png']
-# file_names = ['austin2_0_99.png', 'austin4_0_40.png', 'austin4_0_41.png', 'chicago1_0_41.png', 'chicago3_0_15.png', 'chicago4_0_31.png', 'chicago5_0_41.png', 'tyrol-w4_0_50.png', 'vienna2_0_43.png', 'vienna2_0_53.png','vienna2_0_89.png','vienna3_0_24.png']
-
-['sh_t1VSt2_L81_892807_780503_crop_3.png', 'bj_t2VSt3_L81_00687_784271_crop_2.png', 'bj_t1VSt3_L81_00839_784255_crop_4.png', 'bj_t1VSt2_L81_00687_784271_crop_10.png', 'bj_t1VSt2_L81_00655_784111_crop_5.png', 'bj_t1VSt2_L81_00655_784199_crop_1.png', 'bj_t1VSt2_L81_00655_784311_crop_8.png']
-
-['bj_t1VSt2_L81_00655_784311_crop_8.png', 'bj_t1VSt3_L81_00839_784255_crop_4.png', 'bj_t1VSt2_L81_00655_784311_crop_8.png', 'bj_t1VSt2_L81_00655_784311_crop_8.png']
