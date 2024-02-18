@@ -16,9 +16,9 @@
 
 ## Introduction
 
-This repository is the code implementation of the paper [RSPrompter: Learning to Prompt for Remote Sensing Instance Segmentation based on Visual Foundation Model](https://arxiv.org/abs/2306.16269), which is based on the [MMDetection](https://github.com/open-mmlab/mmdetection/tree/main) project.
+This repository is the code implementation of the paper [RSBuilding: Towards General Remote Sensing Image Building Extraction and Change Detection with Foundation Model](https://arxiv.org/abs/2306.16269), which is based on the [Open-cd](https://github.com/likyoo/open-cd) project.
 
-The current branch has been tested under PyTorch 2.x and CUDA 12.1, supports Python 3.7+, and is compatible with most CUDA versions.
+The current branch has been tested under PyTorch 2.0.1 and CUDA 11.7, supports Python 3.7+, and is compatible with most CUDA versions.
 
 If you find this project helpful, please give us a star ⭐️, your support is our greatest motivation.
 
