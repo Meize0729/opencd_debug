@@ -54,6 +54,15 @@ If you find this project helpful, please give us a star ⭐️, your support is 
 - CUDA 11.7 or higher, recommended 11.7
 - MMCV 2.0 or higher, recommended 2.0
 
+### Install RSPrompter
+
+Download or clone the RSBuilding repository.
+
+```shell
+git clone git@github.com:Meize0729/RSBuilding.git
+cd RS
+```
+
 ### Environment Installation
 
 We recommend using Miniconda for installation. The following command will create a virtual environment named `rsbuilding` and install PyTorch and MMCV.
@@ -92,6 +101,22 @@ pip install -r requirements.txt
 ```
 
 </details>
+
+## Dataset Preparation
+
+We provide the dataset preparation method used in the paper. Data preparation and preprocessing can be somewhat time-consuming. You may choose to work with only the datasets you wish to use.
+
+You can access detailed preprocessing instructions at the following location:
+
+```shell
+cd tools/data_process.md
+```
+Upon completing all the data preprocessing steps along this path, I trust that the train.txt and test.txt files within your [data_list](./data_list/) folder for the datasets you plan to use have been accurately populated with the absolute paths.
+
+
+
+
+
 
 
 
