@@ -22,6 +22,11 @@ The current branch has been tested under PyTorch 2.0.1 and CUDA 11.7, supports P
 
 If you find this project helpful, please give us a star ⭐️, your support is our greatest motivation.
 
+## Update Log
+
+🌟 **2024.02.18** Release the source code and make the pre-trained weights publicly available.
+🌟 **2024.02.18** Updated the paper content, see [Arxiv](https://arxiv.org/abs/2306.16269) for details.
+
 <!-- 
 <div align="center">
   <img src="resources/opencd-logo.png" width="600"/>
