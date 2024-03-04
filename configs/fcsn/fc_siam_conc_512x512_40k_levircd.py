@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/fc_siam_conc.py',
-    '../common/standard_512x512_40k_levircd_bs2.py']
+    '../common/standard_512x512_40k_levircd.py']
 
 wandb = 0
 names = 'fc_siam_conc_512x512_40k_levircd'

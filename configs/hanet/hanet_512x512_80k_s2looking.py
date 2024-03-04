@@ -1,9 +1,9 @@
 _base_ = [
     '../_base_/models/hanet.py',
-    '../common/standard_512x512_80k_s2looking_bs2.py']
+    '../common/standard_512x512_80k_s2looking.py']
 
 wandb = 0
-names = 'hanet_512x512_80k_s2looking_v3'
+names = 'hanet_512x512_80k_s2looking'
 work_dir = '/mnt/public/usr/wangmingze/work_dir/CD_others/' + names
 find_unused_parameters=True
 

@@ -1,14 +1,14 @@
 _base_ = '../_base_/default_runtime.py'
 
-dataset_type = 'Bandon_CD_Dataset'
-data_root = None
+dataset_type = 'LEVIR_CD_Dataset'
+data_root = '/mnt/public/usr/wangmingze/Datasets/CD/S2Looking'
 
 crop_size = (512, 512)
 train_pipeline = [
     dict(type='MultiImgLoadImageFromFile'),
     dict(type='MultiImgLoadAnnotations'),
     dict(type='MultiImgRandomRotate', prob=0.5, degree=180),
-    dict(type='MultiImgRandomCrop', crop_size=crop_size, cat_max_ratio=0.95),
+    dict(type='MultiImgRandomCrop', crop_size=crop_size, cat_max_ratio=0.75),
     dict(type='MultiImgRandomFlip', prob=0.5, direction='horizontal'),
     dict(type='MultiImgRandomFlip', prob=0.5, direction='vertical'),
     dict(type='MultiImgExchangeTime', prob=0.5),
@@ -55,13 +55,12 @@ train_dataloader = dict(
         type=dataset_type,
         data_root=data_root,
         data_prefix=dict(
-            seg_map_path=None,
-            img_path_from=None, 
-            img_path_to=None),
-        ann_file='/mnt/public/usr/wangmingze/opencd/data_list/bandon/data_list_bandon_train.txt',
+            seg_map_path='train/label',
+            img_path_from='train/Image1', 
+            img_path_to='train/Image2'),
         pipeline=train_pipeline))
 val_dataloader = dict(
-    batch_size=8,
+    batch_size=2,
     num_workers=8,
     persistent_workers=True,
     sampler=dict(type='DefaultSampler', shuffle=False),
@@ -69,10 +68,9 @@ val_dataloader = dict(
         type=dataset_type,
         data_root=data_root,
         data_prefix=dict(
-            seg_map_path=None,
-            img_path_from=None, 
-            img_path_to=None),
-        ann_file='/mnt/public/usr/wangmingze/opencd/data_list/bandon/data_list_bandon_test.txt',
+            seg_map_path='test/label_512_nooverlap',
+            img_path_from='test/A_512_nooverlap',
+            img_path_to='test/B_512_nooverlap'),
         pipeline=test_pipeline))
 test_dataloader = dict(
     batch_size=8,
@@ -83,10 +81,9 @@ test_dataloader = dict(
         type=dataset_type,
         data_root=data_root,
         data_prefix=dict(
-            seg_map_path=None,
-            img_path_from=None, 
-            img_path_to=None),
-        ann_file='/mnt/public/usr/wangmingze/opencd/data_list/bandon/data_list_bandon_test.txt',
+            seg_map_path='test/label_512_nooverlap',
+            img_path_from='test/A_512_nooverlap',
+            img_path_to='test/B_512_nooverlap'),
         pipeline=test_pipeline))
 
 val_evaluator = dict(type='IoUMetric', iou_metrics=['mFscore', 'mIoU'])
@@ -106,13 +103,13 @@ param_scheduler = [
         type='PolyLR',
         power=1.0,
         begin=1000,
-        end=120000,
+        end=80000,
         eta_min=0.0,
         by_epoch=False,
     )
 ]
 # training schedule for 40k
-train_cfg = dict(type='IterBasedTrainLoop', max_iters=120000, val_interval=500)
+train_cfg = dict(type='IterBasedTrainLoop', max_iters=80000, val_interval=200)
 val_cfg = dict(type='ValLoop')
 test_cfg = dict(type='TestLoop')
 default_hooks = dict(

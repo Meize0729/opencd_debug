@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/tinycd.py', 
-    '../common/standard_512x512_80k_s2looking_bs2.py'
+    '../common/standard_512x512_80k_s2looking.py'
     # '../common/wmz.py'
     ]
 
@@ -23,7 +23,7 @@ optim_wrapper = dict(
     optimizer=optimizer)
 
 wandb = 0
-names = 'tinycd_512x512_80k_s2looking_v3'
+names = 'tinycd_512x512_80k_s2looking'
 work_dir = '/mnt/public/usr/wangmingze/work_dir/CD_others/' + names
 
 

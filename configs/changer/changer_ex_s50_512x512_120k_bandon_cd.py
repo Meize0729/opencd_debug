@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/changer_s50.py', 
-    '../common/standard_512x512_120k_bandon_cd_bs2.py']
+    '../common/standard_512x512_120k_bandon_cd.py']
 
 norm_cfg = dict(type='SyncBN', requires_grad=True)
 data_preprocessor = dict(

@@ -2,7 +2,7 @@ _base_ = [
     '../_base_/models/changeformer_mit-b0.py', 
     '../common/standard_512x512_80k_s2looking_bs2.py']
 
-checkpoint = './pretrain_for_now/mit_b0_20220624-7e0fe6dd.pth'  # noqa
+checkpoint = 'https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/segformer/mit_b0_20220624-7e0fe6dd.pth'  # noqa
 
 model = dict(pretrained=checkpoint, decode_head=dict(num_classes=2))
 
@@ -23,7 +23,7 @@ optim_wrapper = dict(
 
 
 wandb = 0
-names = 'changeformer_mit-b0_512x512_80k_s2looking_v3'
+names = 'changeformer_mit-b0_512x512_80k_s2looking'
 work_dir = '/mnt/public/usr/wangmingze/work_dir/CD_others/' + names
 
 

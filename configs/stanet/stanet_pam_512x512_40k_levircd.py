@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/stanet_r18.py',
-    '../common/standard_512x512_40k_levircd_bs2.py']
+    '../common/standard_512x512_40k_levircd.py']
 
 crop_size = (512, 512)
 model = dict(

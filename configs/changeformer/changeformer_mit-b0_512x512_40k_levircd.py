@@ -2,7 +2,8 @@ _base_ = [
     '../_base_/models/changeformer_mit-b0.py', 
     '../common/standard_512x512_40k_levircd_bs2.py']
 
-checkpoint = './pretrain_for_now/mit_b0_20220624-7e0fe6dd.pth'  # noqa
+checkpoint = 'https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/segformer/mit_b0_20220624-7e0fe6dd.pth'  # noqa
+
 
 model = dict(pretrained=checkpoint, decode_head=dict(num_classes=2))
 

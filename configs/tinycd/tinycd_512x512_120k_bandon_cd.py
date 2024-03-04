@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/tinycd.py', 
-    '../common/standard_512x512_120k_bandon_cd_bs4.py'
+    '../common/standard_512x512_120k_bandon_cd.py'
     # '../common/wmz.py'
     ]
 

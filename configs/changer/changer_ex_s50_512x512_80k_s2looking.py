@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/changer_s50.py', 
-    '../common/standard_512x512_80k_s2looking_bs2.py']
+    '../common/standard_512x512_80k_s2looking.py']
 
 norm_cfg = dict(type='SyncBN', requires_grad=True)
 data_preprocessor = dict(
@@ -63,7 +63,7 @@ optimizer=dict(
 
 
 wandb = 0
-names = 'changer_ex_s50_512x512_80k_s2looking_v2'
+names = 'changer_ex_s50_512x512_80k_s2looking'
 work_dir = '/mnt/public/usr/wangmingze/work_dir/CD_others/' + names
 
 

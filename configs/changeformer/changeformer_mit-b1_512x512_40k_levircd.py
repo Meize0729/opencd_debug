@@ -2,7 +2,7 @@ _base_ = [
     '../_base_/models/changeformer_mit-b0.py', 
     '../common/standard_512x512_40k_levircd_bs2.py']
 
-checkpoint = './pretrain_for_now/mit_b1_20220624-02e5a6a1.pth'  # noqa
+checkpoint = 'https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/segformer/mit_b1_20220624-02e5a6a1.pth'  # noqa
 
 # model settings
 model = dict(

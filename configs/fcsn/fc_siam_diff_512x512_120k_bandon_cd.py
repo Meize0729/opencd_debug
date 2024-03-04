@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/fc_siam_diff.py',
-    '../common/standard_512x512_120k_bandon_cd_bs2.py']
+    '../common/standard_512x512_120k_bandon_cd.py']
 
 wandb = 0
 names = 'fc_siam_diff_512x512_120k_bandon_cd'

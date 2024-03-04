@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/bit_r18.py', 
-    '../common/standard_512x512_120k_bandon_cd_bs2.py']
+    '../common/standard_512x512_120k_bandon_cd.py']
 
 wandb = 0
 names = 'bit_r18_512x512_120k_bandon_cd'

@@ -1,7 +1,7 @@
 _base_ = '../_base_/default_runtime.py'
 
-dataset_type = 'S2Looking_Dataset'
-data_root = '/mnt/public/usr/wangmingze/Datasets/CD/S2Looking'
+dataset_type = 'LEVIR_CD_Dataset'
+data_root = '/mnt/public/usr/wangmingze/Datasets/CD/levir-CD'
 
 crop_size = (512, 512)
 train_pipeline = [
@@ -11,7 +11,7 @@ train_pipeline = [
     dict(type='MultiImgRandomCrop', crop_size=crop_size, cat_max_ratio=0.75),
     dict(type='MultiImgRandomFlip', prob=0.5, direction='horizontal'),
     dict(type='MultiImgRandomFlip', prob=0.5, direction='vertical'),
-    # dict(type='MultiImgExchangeTime', prob=0.5),
+    dict(type='MultiImgExchangeTime', prob=0.5),
     dict(
         type='MultiImgPhotoMetricDistortion',
         brightness_delta=10,
@@ -22,7 +22,7 @@ train_pipeline = [
 ]
 test_pipeline = [
     dict(type='MultiImgLoadImageFromFile'),
-    dict(type='MultiImgResize', scale=(1024, 1024), keep_ratio=True),
+    dict(type='MultiImgResize', scale=(512, 512), keep_ratio=True),
     # add loading annotation after ``Resize`` because ground truth
     # does not need to do resize data transform
     dict(type='MultiImgLoadAnnotations'),
@@ -47,8 +47,8 @@ tta_pipeline = [
         ])
 ]
 train_dataloader = dict(
-    batch_size=8,
-    num_workers=4,
+    batch_size=2,
+    num_workers=8,
     persistent_workers=True,
     sampler=dict(type='InfiniteSampler', shuffle=True),
     dataset=dict(
@@ -56,37 +56,37 @@ train_dataloader = dict(
         data_root=data_root,
         data_prefix=dict(
             seg_map_path='train/label',
-            img_path_from='train/Image1',
-            img_path_to='train/Image2'),
+            img_path_from='train/A', 
+            img_path_to='train/B'),
         pipeline=train_pipeline))
 val_dataloader = dict(
-    batch_size=1,
-    num_workers=4,
+    batch_size=2,
+    num_workers=8,
     persistent_workers=True,
     sampler=dict(type='DefaultSampler', shuffle=False),
     dataset=dict(
         type=dataset_type,
         data_root=data_root,
         data_prefix=dict(
-            seg_map_path='val/label',
-            img_path_from='val/Image1',
-            img_path_to='val/Image2'),
+            seg_map_path='test/label_512_nooverlap',
+            img_path_from='test/A_512_nooverlap',
+            img_path_to='test/B_512_nooverlap'),
         pipeline=test_pipeline))
 test_dataloader = dict(
-    batch_size=1,
-    num_workers=4,
+    batch_size=8,
+    num_workers=8,
     persistent_workers=True,
     sampler=dict(type='DefaultSampler', shuffle=False),
     dataset=dict(
         type=dataset_type,
         data_root=data_root,
         data_prefix=dict(
-            seg_map_path='test/label',
-            img_path_from='test/Image1',
-            img_path_to='test/Image2'),
+            seg_map_path='test/label_512_nooverlap',
+            img_path_from='test/A_512_nooverlap',
+            img_path_to='test/B_512_nooverlap'),
         pipeline=test_pipeline))
 
-val_evaluator = dict(type='mmseg.IoUMetric', iou_metrics=['mFscore', 'mIoU'])
+val_evaluator = dict(type='IoUMetric', iou_metrics=['mFscore', 'mIoU'])
 test_evaluator = dict(
     type='mmseg.IoUMetric',
     iou_metrics=['mFscore', 'mIoU'])
@@ -109,15 +109,14 @@ param_scheduler = [
     )
 ]
 # training schedule for 40k
-train_cfg = dict(type='IterBasedTrainLoop', max_iters=40000, val_interval=4000)
+train_cfg = dict(type='IterBasedTrainLoop', max_iters=40000, val_interval=200)
 val_cfg = dict(type='ValLoop')
 test_cfg = dict(type='TestLoop')
 default_hooks = dict(
     timer=dict(type='IterTimerHook'),
-    logger=dict(type='LoggerHook', interval=50, log_metric_by_epoch=False),
+    logger=dict(type='LoggerHook', interval=20, log_metric_by_epoch=False),
     param_scheduler=dict(type='ParamSchedulerHook'),
-    checkpoint=dict(type='CheckpointHook', by_epoch=False, interval=4000,
-                    save_best='mIoU'),
+    checkpoint=dict(type='CheckpointHook', by_epoch=False, interval=200),
     sampler_seed=dict(type='DistSamplerSeedHook'),
     visualization=dict(type='CDVisualizationHook', interval=1, 
-                       img_shape=(1024, 1024, 3)))
+                       img_shape=(512, 512, 3)))

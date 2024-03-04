@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/snunet_c16.py',
-    '../common/standard_512x512_40k_levircd_bs2.py']
+    '../common/standard_512x512_40k_levircd.py']
 
 base_channels = 32
 model = dict(

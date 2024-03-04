@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/tinycd_v2.py',
-    '../common/standard_512x512_40k_levircd_bs2.py']
+    '../common/standard_512x512_40k_levircd.py']
 
 
 # optimizer

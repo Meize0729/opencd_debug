@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/tinycd_v2.py',
-    '../common/standard_512x512_80k_s2looking_bs2.py']
+    '../common/standard_512x512_80k_s2looking.py']
 
 
 # optimizer
@@ -32,7 +32,7 @@ model = dict(
         dropout_ratio=0.))
 
 wandb = 0
-names = 'tinycd_v2_l_512x512_80k_s2looking_v3'
+names = 'tinycd_v2_l_512x512_80k_s2looking'
 work_dir = '/mnt/public/usr/wangmingze/work_dir/CD_others/' + names
 
 

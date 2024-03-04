@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/changer_s50.py', 
-    '../common/standard_512x512_40k_levircd_bs2.py']
+    '../common/standard_512x512_40k_levircd.py']
 
 model = dict(
     backbone=dict(

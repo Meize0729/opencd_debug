@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/snunet_c16.py',
-    '../common/standard_512x512_80k_s2looking_bs2.py']
+    '../common/standard_512x512_80k_s2looking.py']
 
 base_channels = 32
 model = dict(
@@ -10,7 +10,7 @@ model = dict(
         channels=base_channels * 4))
 
 wandb = 0
-names = 'snunet_c32_512x512_80k_s2looking_v3'
+names = 'snunet_c32_512x512_80k_s2looking'
 work_dir = '/mnt/public/usr/wangmingze/work_dir/CD_others/' + names
 find_unused_parameters=True
 
