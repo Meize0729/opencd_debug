@@ -27,9 +27,9 @@ If you find this project helpful, please give us a star ⭐️, your support is 
 
 ## Update Log
 
-🌟 **2024.02.18** Release the source code.
+🌟 **2024.03.13** Release the source code.
 
-🌟 **2024.03.07** Updated the paper content, see [Arxiv](http://arxiv.org/abs/2403.07564) for details.
+🌟 **2024.03.12** Updated the paper content, see [Arxiv](http://arxiv.org/abs/2403.07564) for details.
 
 ## Table of Contents
 
@@ -108,7 +108,7 @@ pip install -r requirements.txt
 
 We provide the dataset preparation method used in the paper. Data preparation and preprocessing can be somewhat time-consuming. You may choose to work with only the datasets you wish to use.
 
-You can access detailed preprocessing instructions at the following location:
+You can access detailed preprocessing instructions at [the following location](tools/data_proces/README.md):
 
 ```shell
 cd tools/data_process.md
