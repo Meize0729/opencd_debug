@@ -19,7 +19,7 @@
 
 ## Introduction
 
-This repository is the code implementation of the paper [RSBuilding: Towards General Remote Sensing Image Building Extraction and Change Detection with Foundation Model](https://arxiv.org/abs/2306.16269), which is based on the [Open-cd](https://github.com/likyoo/open-cd) project.
+This repository is the code implementation of the paper [RSBuilding: Towards General Remote Sensing Image Building Extraction and Change Detection with Foundation Model](http://arxiv.org/abs/2403.07564), which is based on the [Open-cd](https://github.com/likyoo/open-cd) project.
 
 The current branch has been tested under PyTorch 2.0.1 and CUDA 11.7, supports Python 3.7+, and is compatible with most CUDA versions.
 
@@ -27,9 +27,9 @@ If you find this project helpful, please give us a star ⭐️, your support is 
 
 ## Update Log
 
-🌟 **2024.02.18** Release the source code and make the pre-trained weights publicly available.
+🌟 **2024.02.18** Release the source code.
 
-🌟 **2024.02.18** Updated the paper content, see [Arxiv](https://arxiv.org/abs/2306.16269) for details.
+🌟 **2024.03.07** Updated the paper content, see [Arxiv](http://arxiv.org/abs/2403.07564) for details.
 
 ## Table of Contents
 
@@ -145,7 +145,7 @@ sh ./tools/dist_train.sh configs_pretrain/xxx.py ${GPU_NUM}  # xxx.py is the con
 
 ### Finetune
 
-**Step1**: Download the pre-trained model from following link: [Baidu NetDisk]() and [Google Drive](). If you use your own pre-trained weights, you can ignore the above steps.
+**Step1**: Download the pre-trained model from following link: [Baidu NetDisk]() and [Google Drive](). If you use your own pre-trained weights, you can ignore the above steps. But we are sorry, we are not yet able to release our pre-trained weights publicly.
 
 **❗️Step2❗️**: After downloading the pre-trained weights, you need to replace **Line 33** in `configs_finetune/***/xxx.py` with the specific path. Meanwhile, change the **Line 41** to the location where you want to save the training logs and weights.
 
@@ -185,11 +185,13 @@ This project is developed based on the [Open-cd](https://github.com/likyoo/open-
 If you use the code, performance benchmarks and pre-trained weights of this project in your research, please refer to the bibtex below to cite RSBuilding.
 
 ```
-@article{chen2023rsprompter,
-  title={RSPrompter: Learning to prompt for remote sensing instance segmentation based on visual foundation model},
-  author={Chen, Keyan and Liu, Chenyang and Chen, Hao and Zhang, Haotian and Li, Wenyuan and Zou, Zhengxia and Shi, Zhenwei},
-  journal={arXiv preprint arXiv:2306.16269},
-  year={2023}
+@misc{wang2024rsbuilding,
+  title={RSBuilding: Towards General Remote Sensing Image Building Extraction and Change Detection with Foundation Model}, 
+  author={Mingze Wang and Keyan Chen and Lili Su and Cilin Yan and Sheng Xu and Haotian Zhang and Pengcheng Yuan and Xiaolong Jiang and Baochang Zhang},
+  year={2024},
+  eprint={2403.07564},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV}
 }
 ```
 
@@ -199,7 +201,9 @@ This project is licensed under the [Apache 2.0 license](LICENSE).
 
 ## Contact
 
-If you have any other questions❓, please contact wmz20000729@gmail.com in time 👬.
+If you have any other questions❓, please contact wmz20000729@buaa.edu.com in time 👬.
+
+I apologize, the code we provide has not been thoroughly optimized. We will continue to refine it.
 
 We will certainly do our utmost to assist you, and your inquiries will also contribute significantly to the optimization of this project.
 
