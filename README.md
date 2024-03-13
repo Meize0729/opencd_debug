@@ -9,10 +9,10 @@
 
 [![GitHub stars](https://badgen.net/github/stars/Meize0729/RSBuilding)](https://github.com/KyanChen/RSBuilding)
 [![license](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
-[![arXiv](https://arxiv.org/abs/2306.16269)](http://arxiv.org/abs/2403.07564)
+[![arXiv](http://arxiv.org/abs/2403.07564)](http://arxiv.org/abs/2403.07564)
 
 <div align="center">
-  <img src="resources/main.png" width="800"/>
+  <img src="resources/main.png" width="400"/>
 </div>
 
 
