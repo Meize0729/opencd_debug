@@ -12,7 +12,7 @@
 [![arXiv](http://arxiv.org/abs/2403.07564)](http://arxiv.org/abs/2403.07564)
 
 <div align="center">
-  <img src="resources/main.png" width="400"/>
+  <img src="resources/main.png" width="600"/>
 </div>
 
 
