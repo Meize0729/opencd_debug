@@ -42,7 +42,7 @@ work_dir = '/mnt/public/usr/wangmingze/work_dir/opencd_terminal/pretrain/' + nam
 
 
 
-""" ************************** 模型 **************************"""
+""" ************************** model **************************"""
 model = dict(
     backbone=dict(
         init_cfg=dict(type='Pretrained', checkpoint=backbone_checkpoint) if backbone_checkpoint else None

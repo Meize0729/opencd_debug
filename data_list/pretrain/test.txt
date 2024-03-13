@@ -4,5 +4,3 @@
 # $data_dir/AerialImageDataset/val.txt
 # $data_dir/Levir-CD/test.txt
 # $data_dir/S2Looking/test.txt
-
-

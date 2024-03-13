@@ -35,11 +35,13 @@ class Foundation_Decoder_v1(BaseModule):
                  loss_type = 'BCELoss',
                  num_classes=2,
                  loss_weight=[1,1,1],
+                 fake_loss_weight=0,  # default 0, only use when pretraining
                  init_cfg=None,
                  finetune_cfg=None,
                  ):
         super().__init__(init_cfg)
         self.loss_weight = loss_weight
+        self.fake_loss_weight = fake_loss_weight
         self.align_corners=None
         self.channels = out_channels
 
@@ -276,6 +278,11 @@ class Foundation_Decoder_v1(BaseModule):
             loss_dict['loss_build_a'] = self.loss_weight[0] * seg_logits.new_zeros([1])
             loss_dict['loss_build_b'] = self.loss_weight[1] * seg_logits.new_zeros([1])
             loss_dict['loss_cd']      = self.loss_weight[2] * self.cd(cd_logits, gt_cd.float())  
+            
+            a_pred = a_logits.sigmoid()
+            b_pred = b_logits.sigmoid()
+            fake_cd_Pred = torch.abs(a_pred - b_pred)
+            loss_dict['loss_cd'] += self.fake_loss_weight * F.binary_cross_entropy(fake_cd_Pred, gt_cd.float(), reduction='mean')
 
         elif data_type == 'only_building_label':
             gt_semantic_segs_a = [data_sample.gt_sem_seg_from.data for data_sample in batch_data_samples]
@@ -292,6 +299,11 @@ class Foundation_Decoder_v1(BaseModule):
             loss_dict['loss_build_a'] = self.loss_weight[0] * self.bx(a_logits, gt_a.float())
             loss_dict['loss_build_b'] = self.loss_weight[1] * self.bx(b_logits, gt_b.float())
             loss_dict['loss_cd'] = self.loss_weight[2] * self.cd(cd_logits, gt_cd.float()) * 0.1
+
+            a_pred = a_logits.sigmoid()
+            b_pred = b_logits.sigmoid()
+            fake_cd_Pred = torch.abs(a_pred - b_pred)
+            loss_dict['loss_cd'] += self.fake_loss_weight * F.binary_cross_entropy(fake_cd_Pred, gt_cd.float(), reduction='mean')
 
         else: 
             gt_semantic_segs_cd = [data_sample.gt_sem_seg.data for data_sample in batch_data_samples]
@@ -310,6 +322,11 @@ class Foundation_Decoder_v1(BaseModule):
             loss_dict['loss_build_a'] = self.loss_weight[0] * self.bx(a_logits, gt_a.float())
             loss_dict['loss_build_b'] = self.loss_weight[1] * self.bx(b_logits, gt_b.float())
             loss_dict['loss_cd'] = self.loss_weight[2] * self.cd(cd_logits, gt_cd.float())
+
+            a_pred = a_logits.sigmoid()
+            b_pred = b_logits.sigmoid()
+            fake_cd_Pred = torch.abs(a_pred - b_pred)
+            loss_dict['loss_cd'] += self.fake_loss_weight * F.binary_cross_entropy(fake_cd_Pred, gt_cd.float(), reduction='mean')
 
         return loss_dict
     
@@ -345,10 +362,12 @@ class Foundation_Decoder_swin_v1(BaseModule):
                  loss_type = 'BCELoss',
                  num_classes=2,
                  loss_weight=[1,1,1],
+                 fake_loss_weight=0,
                  init_cfg=None,
                  finetune_cfg=None):
         super().__init__(init_cfg)
         self.loss_weight = loss_weight
+        self.fake_loss_weight = fake_loss_weight
         self.align_corners=None
         self.channels = out_channels
 
@@ -579,6 +598,11 @@ class Foundation_Decoder_swin_v1(BaseModule):
             loss_dict['loss_build_b'] = self.loss_weight[1] * seg_logits.new_zeros([1])
             loss_dict['loss_cd']      = self.loss_weight[2] * self.cd(cd_logits, gt_cd.float())  
 
+            a_pred = a_logits.sigmoid()
+            b_pred = b_logits.sigmoid()
+            fake_cd_Pred = torch.abs(a_pred - b_pred)
+            loss_dict['loss_cd'] += self.fake_loss_weight * F.binary_cross_entropy(fake_cd_Pred, gt_cd.float(), reduction='mean')
+
 
         elif data_type == 'only_building_label':
             gt_semantic_segs_a = [data_sample.gt_sem_seg_from.data for data_sample in batch_data_samples]
@@ -595,6 +619,11 @@ class Foundation_Decoder_swin_v1(BaseModule):
             loss_dict['loss_build_a'] = self.loss_weight[0] * self.bx(a_logits, gt_a.float())
             loss_dict['loss_build_b'] = self.loss_weight[1] * self.bx(b_logits, gt_b.float())
             loss_dict['loss_cd'] = self.loss_weight[2] * self.cd(cd_logits, gt_cd.float()) * 0.1
+
+            a_pred = a_logits.sigmoid()
+            b_pred = b_logits.sigmoid()
+            fake_cd_Pred = torch.abs(a_pred - b_pred)
+            loss_dict['loss_cd'] += self.fake_loss_weight * F.binary_cross_entropy(fake_cd_Pred, gt_cd.float(), reduction='mean')
 
         else: 
             gt_semantic_segs_cd = [data_sample.gt_sem_seg.data for data_sample in batch_data_samples]
@@ -613,6 +642,11 @@ class Foundation_Decoder_swin_v1(BaseModule):
             loss_dict['loss_build_a'] = self.loss_weight[0] * self.bx(a_logits, gt_a.float())
             loss_dict['loss_build_b'] = self.loss_weight[1] * self.bx(b_logits, gt_b.float())
             loss_dict['loss_cd'] = self.loss_weight[2] * self.cd(cd_logits, gt_cd.float())
+
+            a_pred = a_logits.sigmoid()
+            b_pred = b_logits.sigmoid()
+            fake_cd_Pred = torch.abs(a_pred - b_pred)
+            loss_dict['loss_cd'] += self.fake_loss_weight * F.binary_cross_entropy(fake_cd_Pred, gt_cd.float(), reduction='mean')
 
         return loss_dict
     
