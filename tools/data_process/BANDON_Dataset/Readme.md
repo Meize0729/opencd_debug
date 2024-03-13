@@ -88,7 +88,7 @@ img_a, img_b, label_cd, label_a, label_b
 to
 ```
 img_a, **, **, label_a, **     # test_bx.txt
-img_a, img_b, label_cd, **, ** # test_bx.txt
+img_a, img_b, label_cd, **, ** # test_cd.txt
 ```
 
 Finally, the following folder structure will be obtained.

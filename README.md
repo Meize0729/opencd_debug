@@ -178,7 +178,7 @@ sh ./tools/dist_train.sh configs_finetune/***/xxx.py ${CHECKPOINT_FILE} ${GPU_NU
 
 ## Acknowledgement
 
-This project is developed based on the [Open-cd](https://github.com/likyoo/open-cd) project. Thanks to the developers of the Open-cd project.
+This project is developed based on the [Open-cd](https://github.com/likyoo/open-cd) and [MMSegmentation](https://github.com/open-mmlab/mmsegmentation) project. Thanks to the developers of these projects.
 
 ## Citation
 
